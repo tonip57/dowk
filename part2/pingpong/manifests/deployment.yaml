@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: logoutput
+  name: pingpong-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pingpong
+  template:
+    metadata:
+      labels:
+        app: pingpong
+    spec:
+      containers:
+        - name: pingpong
+          image: tonip57/pingpong
+          env:
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: dbpassword
+                key: POSTGRES_PASSWORD
