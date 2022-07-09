@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: logoutput-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: logoutput
+  template:
+    metadata:
+      labels:
+        app: logoutput
+    spec:
+      volumes: # Define volume
+        - name: shared-image
+          emptyDir: {}
+      containers:
+        - name: logoutputwriter
+          image: tonip57/logoutputwriter
+          resources:
+            limits:
+              cpu: "150m"
+              memory: "100Mi"
+          volumeMounts: # Mount volume
+          - name: shared-image
+            mountPath: /usr/src/app/files
+            subPath: logoutput
+        - name: logoutputreader
+          image: tonip57/logoutputreader
+          resources:
+            limits:
+              cpu: "150m"
+              memory: "100Mi"
+          envFrom:
+            - configMapRef:
+                name: configmap
+          volumeMounts: # Mount volume
+          - name: shared-image
+            mountPath: /usr/src/app/files
+            subPath: logoutput
