@@ -26,3 +26,7 @@ Cons
 ### 3.07
 
 I decided to use Postgres with PersistentVolumeClaims in my project. I chose this one because it has already been done and I didn't want to get stuck on new things.
+
+### 3.10
+
+![screenshot](https://user-images.githubusercontent.com/74241142/178103599-53573283-a032-4ba1-a3d0-b3e3bcff44fb.png)
