@@ -42,7 +42,7 @@ jobs:
 
     # Update yamls
     - name: Update yamls
-      working-directory: part4/project/backend
+      working-directory: part4/project/backend/manifests
       run: |-
         kustomize edit set image IMAGE_PLACEHOLDER=tonip57/backend:${{ github.sha }}
 
