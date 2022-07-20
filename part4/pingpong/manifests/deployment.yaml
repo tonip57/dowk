@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: logoutput
+  name: pingpong-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pingpong
+  template:
+    metadata:
+      labels:
+        app: pingpong
+    spec:
+      containers:
+        - name: pingpong
+          image: tonip57/pingpong
+          readinessProbe:
+            initialDelaySeconds: 20 # Initial delay until the readiness is tested
+            periodSeconds: 30 # How often to test
+            httpGet:
+              path: /healthz
+              port: 3301
+          livenessProbe:
+            initialDelaySeconds: 20 # Initial delay until the liveness is tested
+            periodSeconds: 30 # How often to test
+            httpGet:
+              path: /healthz
+              port: 3301
+          resources:
+            limits:
+              cpu: "150m"
+              memory: "100Mi"
+          env:
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: dbpassword
+                key: POSTGRES_PASSWORD
