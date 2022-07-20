@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: tonip57/backend
+          image: IMAGE_PLACEHOLDER
           readinessProbe:
             initialDelaySeconds: 20 # Initial delay until the readiness is tested
             periodSeconds: 30 # How often to test
