@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  namespace: project
+  namespace: default
   name: image-claim
 spec:
   accessModes:
