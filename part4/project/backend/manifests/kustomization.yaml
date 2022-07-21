@@ -9,4 +9,4 @@ resources:
 images:
 - name: IMAGE_PLACEHOLDER
   newName: tonip57/backend
-  newTag: ea9a62192d792dc92ba34d8c8705af1d90e06b74
+  newTag: 4566f7f99da31b8ac4d2b385a34e0110c78c1a30
