@@ -6,7 +6,7 @@ metadata:
 spec:
   metrics:
   - name: rate
-    initialDelay: 1m
+    initialDelay: 10m
     successCondition: result < 2
     provider:
       prometheus:
