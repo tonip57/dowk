@@ -15,3 +15,4 @@ axios.get("https://en.wikipedia.org/wiki/Special:Random")
     .catch(function (error) {
         console.log(error)
     })
+
