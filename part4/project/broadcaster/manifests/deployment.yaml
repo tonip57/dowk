@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: broadcaster
-          image: tonip57/broadcaster
+          image: IMAGE_PLACEHOLDER
           env:
           - name: NATS_URL
             value: nats://my-nats:4222
