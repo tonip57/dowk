@@ -11,5 +11,4 @@ spec:
     provider:
       prometheus:
        address: http://kube-prometheus-stack-1658-prometheus.prometheus.svc.cluster.local:9090
-        query: |
-          scalar(sum(rate(container_cpu_usage_seconds_total{namespace="default"}[10m])))
+       query: scalar(sum(rate(container_cpu_usage_seconds_total{namespace="default"}[10m])))
