@@ -7,7 +7,7 @@ spec:
   metrics:
   - name: rate
     initialDelay: 10m
-    successCondition: result < 2
+    successCondition: result < 0.5
     provider:
       prometheus:
        address: http://kube-prometheus-stack-1658-prometheus.prometheus.svc.cluster.local:9090
