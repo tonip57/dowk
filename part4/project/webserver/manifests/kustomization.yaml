@@ -8,4 +8,4 @@ resources:
 images:
 - name: IMAGE_PLACEHOLDER
   newName: tonip57/webserver
-  newTag: 6e28bd09eafbc7fb02e83b73ac7cd7ecf05e53e9
+  newTag: 9f3a88a55600d728cb0285086d0b5606c2e2e036
