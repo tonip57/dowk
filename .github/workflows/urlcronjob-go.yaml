@@ -1,4 +1,4 @@
-name: Release backend-go
+name: Release urlcronjob-go
 
 on:
   push:
