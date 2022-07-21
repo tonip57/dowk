@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- deployment.yaml
+- ingress.yaml
+- persistentvolumeclaim.yaml
+- service.yaml
+images:
+- name: IMAGE_PLACEHOLDER
+  newName: tonip57/webserver
+  newTag: c7b1bdd72bb718ef39e0b99c49b6b3d6e16ae0ac
