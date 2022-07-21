@@ -6,4 +6,4 @@ resources:
 images:
 - name: IMAGE_PLACEHOLDER
   newName: tonip57/broadcaster
-  newTag: 3424cafa4a98f7929f99818bd632090afe31355b
+  newTag: 76dc696f605bc1834dba99d8c8062b56d5d12256
