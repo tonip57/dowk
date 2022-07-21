@@ -5,4 +5,4 @@ resources:
 images:
 - name: IMAGE_PLACEHOLDER
   newName: tonip57/urlcronjob
-  newTag: 196c66e0d309cc593523113913510449e1d81a02
+  newTag: 73763eddc1e39c61b508a5c1b1dbace76165424c
