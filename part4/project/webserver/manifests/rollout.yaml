@@ -1,5 +1,5 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   namespace: default
   name: webserver-dep
@@ -8,6 +8,13 @@ spec:
   selector:
     matchLabels:
       app: webserver
+  strategy:
+    canary:
+      steps:
+      - setWeight: 50
+      - analysis:
+          templates:
+          - templateName: rate
   template:
     metadata:
       labels:
