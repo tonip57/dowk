@@ -11,5 +11,5 @@ spec:
         spec:
           containers:
           - name: cronjob
-            image: tonip57/urlcronjob
+            image: IMAGE_PLACEHOLDER
           restartPolicy: OnFailure
