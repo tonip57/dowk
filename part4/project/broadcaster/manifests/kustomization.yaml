@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- deployment.yaml
+- secret.yaml
+images:
+- name: IMAGE_PLACEHOLDER
+  newName: tonip57/broadcaster
+  newTag: 0bf85133c74b4c06a2d851e6901c0b27f29e6b90
