@@ -19,7 +19,7 @@ spec:
             claimName: image-claim
       containers:
         - name: webserver
-          image: tonip57/webserver
+          image: IMAGE_PLACEHOLDER
           readinessProbe:
             initialDelaySeconds: 20 # Initial delay until the readiness is tested
             periodSeconds: 30 # How often to test
