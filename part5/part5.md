@@ -1,8 +1,24 @@
 ### 5.04
 
-### Rancher vs OpenShift
+### Rancher
+- Open source
+- Easier and faster installation
+- More lightweight
+- Not as complex as OpenShift
+- Cheaper
+- Follows and extends industry standards
+- Multi-cluster managements stable for many years
+- Smooth version updates
+- Limited partners
 
-
+### OpenShift
+- Community version is open source, enterprise not
+- Backed by Red Hat
+- Installation may take over a week
+- Favors own tools and practices = moving away from industry standards, vendor lock in
+- More expensive
+- Reported failed version updates
+- IBM Partners
 
 ### 5.06
 
