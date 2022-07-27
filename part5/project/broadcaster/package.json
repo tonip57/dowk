@@ -1,0 +1,11 @@
+{
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "nats": "^2.7.1",
+    "node-telegram-bot-api": "^0.58.0"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0"
+  }
+}

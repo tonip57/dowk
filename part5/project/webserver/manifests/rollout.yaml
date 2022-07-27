@@ -1,0 +1,53 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  namespace: default
+  name: webserver-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webserver
+  strategy:
+    canary:
+      steps:
+      - setWeight: 50
+      - analysis:
+          templates:
+          - templateName: rate
+  template:
+    metadata:
+      labels:
+        app: webserver
+    spec:
+      volumes:
+        - name: shared-image
+          persistentVolumeClaim:
+            claimName: image-claim
+      containers:
+        - name: webserver
+          image: tonip57/webserver
+          readinessProbe:
+            initialDelaySeconds: 20 # Initial delay until the readiness is tested
+            periodSeconds: 30 # How often to test
+            httpGet:
+              path: /healthz
+              port: 3300
+          livenessProbe:
+            initialDelaySeconds: 20 # Initial delay until the liveness is tested
+            periodSeconds: 30 # How often to test
+            httpGet:
+              path: /healthz
+              port: 3300
+          resources:
+            requests:
+              cpu: "80m"
+              memory: "80Mi"
+            limits:
+              cpu: "250m"
+              memory: "250Mi"
+          volumeMounts:
+          - name: shared-image
+            mountPath: /usr/src/app/files
+            subPath: app
+            
