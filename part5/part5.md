@@ -1,3 +1,7 @@
+### 5.01
+
+The following workflow works: 1. apply role, account and binding. 2. apply deployment. 3. apply DummySite
+
 ### 5.02
 
 Deployments are meshed:
