@@ -1,0 +1,6 @@
+apiVersion: tonip57.dwk/v1
+kind: DummySite
+metadata:
+  name: example
+spec:
+  website_url: https://example.com/
